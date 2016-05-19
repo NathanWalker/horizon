@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HorizonService} from '../../services/horizon.service';
 @Component({
-    selector: '<chat></chat>',
+    selector: 'chat',
     templateUrl : 'components/chat/chat.component.html',
     providers: [HorizonService]
 })
