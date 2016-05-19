@@ -1,0 +1,18 @@
+<h1>Messages</h1>
+<StackLayout>
+    <StackLayout>
+        <TextField [(ngModel)]="newMessage"></TextField>
+        <Button [text]="Send" (tap)="addMessage(newMessage)"></Button>
+    </StackLayout>
+    <GridLayout>
+        <ListView [items]="messages">
+            <template let-item="item">
+      <GridLayout>
+       <Image height="50" width="50" src="message.avatar"></Image>
+       <Label [text]="item.text"></Label>
+       <Label [text]="item.datetime"></Label>
+      </GridLayout>
+     </template>
+        </ListView>
+    </GridLayout>
+</StackLayout>

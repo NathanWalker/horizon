@@ -22,7 +22,7 @@ export class HorizonService {
             .limit(10)
             .watch()
             .map((res)=>{return res})
-            .error((e)=>{return Observable.throw(e.message)})
+            .catch((e)=>{return Observable.throw(e.message)})
     }
     addMessage(text):Observable<any> {
         return this.chat.store({
@@ -33,7 +33,7 @@ export class HorizonService {
         .map((res)=>{
             return res;
         })
-        .error((e)=>{
+        .catch((e)=>{
             return Observable.throw(e.message);
         })
     }
