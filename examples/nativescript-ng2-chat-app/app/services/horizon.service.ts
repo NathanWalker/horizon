@@ -1,7 +1,7 @@
 var Horizon = require('@horizon/client/dist/horizon-dev');
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-const SERVER_URL = 'http://192.168.56.1:8181' //Using genymotion
+const SERVER_URL = 'http://127.0.0.1:8181' //Using genymotion
 
 @Injectable()
 export class HorizonService {
@@ -9,7 +9,7 @@ export class HorizonService {
     private chat;
     private avatar_url = `http://api.adorable.io/avatars/50/${new Date().getMilliseconds()}.png`;
     constructor() {
-        this.horizon = Horizon({ host: SERVER_URL });
+        this.horizon = new Horizon({ host: SERVER_URL });
 
         this.horizon.onReady()
             .subscribe(status => { console.log(status) })
@@ -19,9 +19,10 @@ export class HorizonService {
 
         this.horizon.onSocketError()
             .subscribe(status => { console.log(status) })
-
-        this.chat = this.horizon('messages');
+        
+        this.chat = this.horizon('messages');     
     }
+    
     connect() {
         return this.horizon.connect();
     }

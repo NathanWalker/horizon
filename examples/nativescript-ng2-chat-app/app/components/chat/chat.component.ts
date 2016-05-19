@@ -17,15 +17,20 @@ export class ChatComponent implements OnInit {
 
     ngOnInit() {
         this.hs.getChats()
-            .subscribe(
-            newMessage => { this.messages = [...newMessage] },
+            .subscribe((newMessage) => {
+                this.messages = [...newMessage];
+            },
             error => { console.log(error) })
     }
 
     addMessage(message) {
         this.hs.addMessage(message)
-            .subscribe(
-            res => { console.log(res) },
+            .subscribe((res) => {
+                console.log(res);
+                console.log(`Adding new message:`);
+                console.log(this.newMessage);
+                
+            },
             error => { console.log(error) })
         this.newMessage = '';
 
