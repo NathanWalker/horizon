@@ -1,7 +1,7 @@
 var Horizon = require('@horizon/client/dist/horizon-dev');
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-const SERVER_URL = 'http://192.168.11.173:8181' //Using genymotion
+const SERVER_URL = 'http://192.168.56.1:8181' //Using genymotion
 
 @Injectable()
 export class HorizonService {
