@@ -1,9 +1,9 @@
 <StackLayout>
-    <StackLayout>
-        <Label text="Messages" textWrap="true"></Label>
-        <TextField [(ngModel)]="newMessage"></TextField>
-        <Button [text]="Send" (tap)="addMessage(newMessage)"></Button>
-    </StackLayout>
+    <GridLayout rows="auto,auto" columns="*,auto">
+        <Label colSpan="2" text="Messages" textWrap="true"></Label>
+        <TextField row="1" [(ngModel)]="newMessage"></TextField>
+        <Button row="1" col="1" text="Send" (tap)="addMessage(newMessage)"></Button>
+    </GridLayout>
     <GridLayout>
         <ListView [items]="messages">
             <template let-item="item">
